@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Snake</title>
+    <style>
+        #overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            visibility: hidden;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        #messages {
+            position: fixed;
+            top: 25%;
+            text-align: center;
+        }
+
+        #gameOverMessage {
+            color: white;
+            font-size: 8rem;
+        }
+
+        #finalScore {
+            color: white;
+            font-size: 4rem;
+        }
+
+        #playAgainMessage {
+            padding-top: 80px;
+            color: lightgray;
+            font-size: 3rem;
+        }
+
+        .gameOver {
+            background-color: black;
+            opacity: .75;
+            visibility: visible !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay">
+        <div id="messages">
+            <div id="gameOverMessage">GAME OVER</div>
+            <div id="finalScore"></div>
+            <div id="playAgainMessage">Click anywhere to play again</div>
+        </div>
+    </div>
+    <canvas id="board"></canvas>
+    <script src="game.js"></script>
+</body>
+
+</html>
