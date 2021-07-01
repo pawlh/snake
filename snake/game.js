@@ -9,9 +9,9 @@ const FPS = 8
 const GROWTH_FREQUENCY = 5
 //gridlines: true || false
 const SHOW_GRID = false
-const SNAKE_COLOR = '#407F7F'
+const SNAKE_COLOR = '#FE2712'
 const GRID_LINES_COLOR = '#8c8da8'
-const BOARD_COLOR = '#D46A6A'
+const BOARD_COLOR = '#E3F7D4'
 
 
 let adjusted_size = CELL_DIMENSION - FILL_OFFSET * 2
@@ -134,18 +134,23 @@ function updateSnake(timestamp) {
 }
 
 function handleInput(event) {
+    console.log(event.key)
 
     switch (event.key) {
-        case ('a' || 'ArrowLeft'):
+        case 'a':
+        case 'ArrowLeft':
             snake.directon = snake.directon != (direction.LEFT + 2) % 4 ? direction.LEFT : snake.directon
             break
-        case ('w' || 'ArrowUp'):
+        case 'w':
+        case 'ArrowUp':
             snake.directon = snake.directon != (direction.UP + 2) % 4 ? direction.UP : snake.directon
             break
-        case ('d' || 'ArrowRight'):
+        case 'd':
+        case 'ArrowRight':
             snake.directon = (snake.directon != (direction.RIGHT + 2) % 4) ? direction.RIGHT : snake.directon
             break
-        case ('s' || 'ArrowDown'):
+        case 's':
+        case 'ArrowDown':
             snake.directon = snake.directon != (direction.DOWN + 2) % 4 ? direction.DOWN : snake.directon
             break
     }
